@@ -1,0 +1,8 @@
+C:\Users\vannosb\source\repos\SOEFunctionalityTest\SOEFunctionalityTest\obj\x86\Debug\net8.0-windows\SOEFunctionalityTest.csproj.AssemblyReference.cache
+C:\Users\vannosb\source\repos\SOEFunctionalityTest\SOEFunctionalityTest\obj\x86\Debug\net8.0-windows\Views\MapLineView.g.cs
+C:\Users\vannosb\source\repos\SOEFunctionalityTest\SOEFunctionalityTest\obj\x86\Debug\net8.0-windows\Views\MapPointView.g.cs
+C:\Users\vannosb\source\repos\SOEFunctionalityTest\SOEFunctionalityTest\obj\x86\Debug\net8.0-windows\Views\ResultsView.g.cs
+C:\Users\vannosb\source\repos\SOEFunctionalityTest\SOEFunctionalityTest\obj\x86\Debug\net8.0-windows\App.g.cs
+C:\Users\vannosb\source\repos\SOEFunctionalityTest\SOEFunctionalityTest\obj\x86\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\Users\vannosb\source\repos\SOEFunctionalityTest\SOEFunctionalityTest\obj\x86\Debug\net8.0-windows\SOEFunctionalityTest_MarkupCompile.cache
+C:\Users\vannosb\source\repos\SOEFunctionalityTest\SOEFunctionalityTest\obj\x86\Debug\net8.0-windows\SOEFunctionalityTest_MarkupCompile.lref
