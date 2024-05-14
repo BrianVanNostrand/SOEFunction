@@ -10,75 +10,77 @@
     <UserControl.Resources>
         <viewmodel:MapPointViewModel x:Key="ViewModel"/>
     </UserControl.Resources>
-    <Grid DataContext="{Binding Source={StaticResource ViewModel}}"  Background="Aquamarine">
+    <Grid DataContext="{Binding Source={StaticResource ViewModel}}" Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="90px"/>
+            <RowDefinition Height="60px"/>
             <RowDefinition/>
+            <RowDefinition Height="20px"/>
         </Grid.RowDefinitions>
-        <Canvas Grid.Column="0" Grid.Row="0" Background="AntiqueWhite">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Label x:Name="MapPointSearchDistanceLabel" Grid.Row="0" Grid.Column="0">Search Distance</Label>
-                <Label  Grid.Row="0" Grid.Column="2">Feet</Label>
-                <Button x:Name="MapPointExecuteButton" Grid.Row="1" Grid.Column="0" Command="{Binding UpdateSOEResponse}">Map It</Button>
-                <TextBox x:Name="MapPointSearcDistanceTextBox" Text="{Binding SOEArgs.SearchRadius, Mode=TwoWay}" Width="50px" Grid.Row="0" Grid.Column="1"></TextBox>
-                <Label Grid.Row="2" Grid.Column="0">Coordinates of Click</Label>
-                <Label Grid.Row="2" Grid.Column="1" Content="{Binding SOEArgs.X}"/>
-                <Label Grid.Row="2" Grid.Column="2" Content="{Binding SOEArgs.Y}"/>
-            </Grid>
-        </Canvas>
-        <Canvas Grid.Row="1" Grid.Column="0" Background="Azure">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Label Grid.Column="0" Grid.Row="0">Results</Label>
-                <Label Grid.Column="0" Grid.Row="1">Angle</Label>
-                <Label Grid.Column="0" Grid.Row="2">ARM</Label>
-                <Label Grid.Column="0" Grid.Row="3">Back</Label>
-                <Label Grid.Column="0" Grid.Row="4">Decrease</Label>
-                <Label Grid.Column="0" Grid.Row="5">Distance</Label>
-                <Label Grid.Column="0" Grid.Row="6">Route</Label>
-                <Label Grid.Column="0" Grid.Row="7">SRMP</Label>
-                <Label Grid.Column="0" Grid.Row="8">X</Label>
-                <Label Grid.Column="0" Grid.Row="9">Y</Label>
-                <Label Grid.Column="1" Grid.Row="1" Content="{Binding SOEResponse.Angle,UpdateSourceTrigger=PropertyChanged}" />
-                <Label Grid.Column="1" Grid.Row="2" Content="{Binding SOEResponse.Arm, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Grid.Column="1" Grid.Row="3" Content="{Binding SOEResponse.Back, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Grid.Column="1" Grid.Row="4" Content="{Binding SOEResponse.Decrease, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Grid.Column="1" Grid.Row="5" Content="{Binding SOEResponse.Distance, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Grid.Column="1" Grid.Row="6" Content="{Binding SOEResponse.Route, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Grid.Column="1" Grid.Row="7" Content="{Binding SOEResponse.Srmp, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Grid.Column="1" Grid.Row="8" Content="{Binding SOEResponse.EventPoint.x, UpdateSourceTrigger=PropertyChanged}"/>
-                <Label Grid.Column="1" Grid.Row="9" Content="{Binding SOEResponse.EventPoint.y, UpdateSourceTrigger=PropertyChanged}"/>
-
-            </Grid>
-        </Canvas>
+        <Grid Grid.Column="0" Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label x:Name="MapPointSearchDistanceLabel" Grid.Row="0" Grid.Column="0">Search Distance</Label>
+            <Label  Grid.Row="0" Grid.Column="2">Feet</Label>
+            <TextBox x:Name="MapPointSearcDistanceTextBox" Text="{Binding SOEArgs.SearchRadius, Mode=TwoWay}"  Grid.Row="0" Grid.Column="1"></TextBox>
+            <Label Grid.Row="2" Grid.Column="0">Coordinates of Click</Label>
+            <Label Grid.Row="2" Grid.Column="1" Content="{Binding SOEArgs.X}"/>
+            <Label Grid.Row="2" Grid.Column="2" Content="{Binding SOEArgs.Y}"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="0" VerticalAlignment="Stretch" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="0">Results</Label>
+            <Label Grid.Column="0" Grid.Row="1">Angle</Label>
+            <Label Grid.Column="0" Grid.Row="2">ARM</Label>
+            <Label Grid.Column="0" Grid.Row="3">Back</Label>
+            <Label Grid.Column="0" Grid.Row="4">Decrease</Label>
+            <Label Grid.Column="0" Grid.Row="5">Distance</Label>
+            <Label Grid.Column="0" Grid.Row="6">Route</Label>
+            <Label Grid.Column="0" Grid.Row="7">SRMP</Label>
+            <Label Grid.Column="0" Grid.Row="8">X</Label>
+            <Label Grid.Column="0" Grid.Row="9">Y</Label>
+            <Label Grid.Column="1" Grid.Row="1" Content="{Binding SOEResponse.Angle,UpdateSourceTrigger=PropertyChanged}" />
+            <Label Grid.Column="1" Grid.Row="2" Content="{Binding SOEResponse.Arm, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="1" Grid.Row="3" Content="{Binding SOEResponse.Back, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="1" Grid.Row="4" Content="{Binding SOEResponse.Decrease, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="1" Grid.Row="5" Content="{Binding SOEResponse.Distance, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="1" Grid.Row="6" Content="{Binding SOEResponse.Route, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="1" Grid.Row="7" Content="{Binding SOEResponse.Srmp, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="1" Grid.Row="8" Content="{Binding SOEResponse.EventPoint.x, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="1" Grid.Row="9" Content="{Binding SOEResponse.EventPoint.y, UpdateSourceTrigger=PropertyChanged}"/>
+        </Grid>
+        <Grid Grid.Column="0" Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100px"/>
+                <ColumnDefinition Width="100px"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="MapPointExecuteButton" Grid.Row="1" Grid.Column="0" Command="{Binding UpdateSOEResponse}">Map It</Button>
+            <Button x:Name="MapPointSaveButton" Grid.Row="1" Grid.Column="1" Command="{Binding UpdateSOEResponse}">Save Result</Button>
+        </Grid>
     </Grid>
 </UserControl>

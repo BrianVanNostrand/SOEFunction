@@ -162,11 +162,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\vannosb\\source\\repos\\SOEFunctionalityTest\\SOEFunctionalityTest\\SOEFunctionalityTest.csproj",
+      "projectUniqueName": "C:\\Users\\vannosb\\source\\repos\\SOEFunction\\SOEFunctionalityTest\\SOEFunctionalityTest.csproj",
       "projectName": "SOEFunctionalityTest",
-      "projectPath": "C:\\Users\\vannosb\\source\\repos\\SOEFunctionalityTest\\SOEFunctionalityTest\\SOEFunctionalityTest.csproj",
+      "projectPath": "C:\\Users\\vannosb\\source\\repos\\SOEFunction\\SOEFunctionalityTest\\SOEFunctionalityTest.csproj",
       "packagesPath": "C:\\Users\\vannosb\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\vannosb\\source\\repos\\SOEFunctionalityTest\\SOEFunctionalityTest\\obj\\",
+      "outputPath": "C:\\Users\\vannosb\\source\\repos\\SOEFunction\\SOEFunctionalityTest\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

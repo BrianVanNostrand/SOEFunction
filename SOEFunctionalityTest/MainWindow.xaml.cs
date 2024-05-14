@@ -18,25 +18,31 @@ namespace SOEFunctionalityTest
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MapPointViewModel _mapPointViewModel;
+        private MapLineViewModel _mapLineViewModel;
+        private ResultsViewModel _resultsViewModel;
         public MainWindow()
         {
+            _mapLineViewModel = new MapLineViewModel();
+            _mapPointViewModel = new MapPointViewModel();
+            _resultsViewModel = new ResultsViewModel();
+            DataContext = _mapPointViewModel;
             InitializeComponent();
-            DataContext = new MapPointViewModel();
         }
 
         private void MapPointButton_Clicked(object sender, RoutedEventArgs e)
         {
-            DataContext = new MapPointViewModel();
+            DataContext = this._mapPointViewModel;
         }
 
         private void MapLineButton_Clicked(object sender, RoutedEventArgs e)
         {
-            DataContext = new MapLineViewModel();
+            DataContext = _mapLineViewModel;
         }
 
         private void ResultsButton_Clicked(object sender, RoutedEventArgs e)
         {
-            DataContext = new ResultsViewModel();
+            DataContext = _resultsViewModel;
         }
     }
 }

@@ -9,14 +9,20 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="375">
     <Window.Resources>
+        <views:MapLineView x:Key="MapLineViewKey"/>
+        <views:MapPointView x:Key="MapPointViewKey"/>
+        <views:ResultsView x:Key="ResultsViewKey"/>
         <DataTemplate x:Name="MapPointTemplate" DataType="{x:Type viewmodels:MapPointViewModel}">
-            <views:MapPointView DataContext ="{Binding}"/>
+            <!--<views:MapPointView DataContext ="{Binding}"/>  This will make a new VM every time the context changes-->
+            <ContentControl Content="{StaticResource MapPointViewKey}"/>
         </DataTemplate>
         <DataTemplate x:Name="MapLineTemplate" DataType="{x:Type viewmodels:MapLineViewModel}">
-            <views:MapLineView DataContext ="{Binding}"/>
+            <!--<views:MapLineView DataContext ="{Binding}"/>-->
+            <ContentControl Content="{StaticResource MapLineViewKey}"/>
         </DataTemplate>
         <DataTemplate x:Name="ResultsTemplate" DataType="{x:Type viewmodels:ResultsViewModel}">
-            <views:ResultsView DataContext ="{Binding}"/>
+            <!--<views:ResultsView DataContext ="{Binding}"/>-->
+            <ContentControl Content="{StaticResource ResultsViewKey}"/>
         </DataTemplate>
     </Window.Resources>
     <Grid>

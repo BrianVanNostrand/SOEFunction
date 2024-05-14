@@ -10,26 +10,23 @@
     <UserControl.Resources>
         <viewmodel:MapLineViewModel x:Key="ViewModel"/>
     </UserControl.Resources>
-    <Grid DataContext="{Binding Source={StaticResource ViewModel}}"  Background="Aquamarine">
+    <Grid DataContext="{Binding Source={StaticResource ViewModel}}"  Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="110px"/>
+            <RowDefinition Height="80px"/>
             <RowDefinition/>
+            <RowDefinition Height="20px"/>
         </Grid.RowDefinitions>
-        <Canvas Grid.Column="0" Grid.Row="0" Background="AntiqueWhite">
-            <Grid>
+        <Grid Grid.Column="0" Grid.Row="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="125px"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="40px"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
                     <RowDefinition/>
@@ -38,26 +35,24 @@
                 <Label Grid.Row="0" Grid.Column="2">End Point</Label>
                 <Label x:Name="MapPointSearchDistanceLabel" Grid.Row="1" Grid.Column="0">Search Distance</Label>
                 <Label  Grid.Row="1" Grid.Column="3">Feet</Label>
-                <Button x:Name="MapStartPointExecuteButton" Grid.Row="3" Grid.Column="1" Command="{Binding UpdateSOEStartEndResponse}" CommandParameter="start">Map It</Button>
-                <Button x:Name="MapEndPointExecuteButton" Grid.Row="3" Grid.Column="2" Command="{Binding UpdateSOEStartEndResponse}" CommandParameter="end">Map It</Button>
-                <TextBox x:Name="MapStartPointSearcDistanceTextBox"  Grid.Row="1" Grid.Column="1" Text="{Binding SOEStartArgs.SearchRadius, Mode=TwoWay}" Width="50px"></TextBox>
-                <TextBox x:Name="MapEndPointSearcDistanceTextBox"  Grid.Row="1" Grid.Column="2" Text="{Binding SOEEndArgs.SearchRadius, Mode=TwoWay}" Width="50px"></TextBox>
-                <Label Grid.Row="2" Grid.Column="0">Coordinates of Click</Label>
-                <Label Grid.Row="2" Grid.Column="1">
-                    <MultiBinding StringFormat="{}{0} , {1}">
-                        <Binding Path="SOEStartArgs.X" />
-                        <Binding Path="SOEStartArgs.Y" />
-                    </MultiBinding>
-                </Label>
-                <Label Grid.Row="2" Grid.Column="2">
-                    <MultiBinding StringFormat="{}{0} , {1}">
-                        <Binding Path="SOEEndArgs.X" />
-                        <Binding Path="SOEEndArgs.Y" />
-                    </MultiBinding>
-                </Label>
-            </Grid>
-        </Canvas>
-        <Canvas Grid.Row="1" Grid.Column="0" Background="Azure">
+                <TextBox x:Name="MapStartPointSearcDistanceTextBox"  Grid.Row="1" Grid.Column="1" Text="{Binding SOEStartArgs.SearchRadius, Mode=TwoWay}">
+            </TextBox>
+            <TextBox x:Name="MapEndPointSearcDistanceTextBox"  Grid.Row="1" Grid.Column="2" Text="{Binding SOEEndArgs.SearchRadius, Mode=TwoWay}"></TextBox>
+            <Label Grid.Row="2" Grid.Column="0">Coordinates of Click</Label>
+            <Label Grid.Row="2" Grid.Column="1">
+                <MultiBinding StringFormat="{}{0} , {1}">
+                    <Binding Path="SOEStartArgs.X" />
+                    <Binding Path="SOEStartArgs.Y" />
+                </MultiBinding>
+            </Label>
+            <Label Grid.Row="2" Grid.Column="2">
+                <MultiBinding StringFormat="{}{0} , {1}">
+                    <Binding Path="SOEEndArgs.X" />
+                    <Binding Path="SOEEndArgs.Y" />
+                </MultiBinding>
+            </Label>
+        </Grid>
+        <Canvas Grid.Row="1" Grid.Column="0">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -111,5 +106,14 @@
                 <Label Grid.Column="2" Grid.Row="9" Content="{Binding SOEEndResponse.EventPoint.y, UpdateSourceTrigger=PropertyChanged}"/>
             </Grid>
         </Canvas>
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="MapStartPointExecuteButton" Grid.Row="3" Grid.Column="0" Command="{Binding UpdateSOEStartEndResponse}" CommandParameter="start">Map Start</Button>
+            <Button x:Name="MapEndPointExecuteButton" Grid.Row="3" Grid.Column="1" Command="{Binding UpdateSOEStartEndResponse}" CommandParameter="end">Map End</Button>
+        </Grid>
     </Grid>
 </UserControl>

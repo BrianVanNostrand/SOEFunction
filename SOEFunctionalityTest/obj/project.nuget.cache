@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lHgBM8dYPiaWNIe19uq15S/pI65SaxiCzZAR+MzlTfUcg4JD4ghp8qNDAVcwOIt+hlshAq3rPGWMcA+3sxiHCg==",
+  "dgSpecHash": "MEFFW7lVExkuN9UkvrgjjLaVYHidJ7qGmwXwPOzl5YCnyHsjUJ6EouTLuMYtJZ8t8sfffWRTLUCoxH4jRASNIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\vannosb\\source\\repos\\SOEFunctionalityTest\\SOEFunctionalityTest\\SOEFunctionalityTest.csproj",
+  "projectFilePath": "C:\\Users\\vannosb\\source\\repos\\SOEFunction\\SOEFunctionalityTest\\SOEFunctionalityTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vannosb\\.nuget\\packages\\flurl\\4.0.0\\flurl.4.0.0.nupkg.sha512",
     "C:\\Users\\vannosb\\.nuget\\packages\\flurl.http\\4.0.2\\flurl.http.4.0.2.nupkg.sha512",
