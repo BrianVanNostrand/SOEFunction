@@ -30,7 +30,7 @@ namespace SOEFunctionalityTest.Commands
         }
         public void Execute(object parameter)
         {
-            _execute(parameter);
+            _execute.Invoke(parameter);
         }
         private readonly Action<object> _execute;
         private readonly Predicate<object> _canExecute;

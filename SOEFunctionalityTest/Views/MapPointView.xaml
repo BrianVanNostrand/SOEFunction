@@ -3,14 +3,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:SOEFunctionalityTest.ViewModels"
-             xmlns:viewmodel="clr-namespace:SOEFunctionalityTest.ViewModels" 
              mc:Ignorable="d" 
              d:DesignHeight="375" d:DesignWidth="364">
-    <UserControl.Resources>
-        <viewmodel:MapPointViewModel x:Key="ViewModel"/>
-    </UserControl.Resources>
-    <Grid DataContext="{Binding Source={StaticResource ViewModel}}" Background="White">
+    <Grid DataContext="{StaticResource mapPointSharedVM}" Background="White">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
@@ -53,16 +48,16 @@
                 <RowDefinition/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Grid.Row="0">Results</Label>
-            <Label Grid.Column="0" Grid.Row="1">Angle</Label>
-            <Label Grid.Column="0" Grid.Row="2">ARM</Label>
-            <Label Grid.Column="0" Grid.Row="3">Back</Label>
-            <Label Grid.Column="0" Grid.Row="4">Decrease</Label>
-            <Label Grid.Column="0" Grid.Row="5">Distance</Label>
-            <Label Grid.Column="0" Grid.Row="6">Route</Label>
-            <Label Grid.Column="0" Grid.Row="7">SRMP</Label>
-            <Label Grid.Column="0" Grid.Row="8">X</Label>
-            <Label Grid.Column="0" Grid.Row="9">Y</Label>
+            <Label Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Center">Results</Label>
+            <Label Grid.Column="0" Grid.Row="1" HorizontalContentAlignment="Center">Angle</Label>
+            <Label Grid.Column="0" Grid.Row="2" HorizontalContentAlignment="Center">ARM</Label>
+            <Label Grid.Column="0" Grid.Row="3" HorizontalContentAlignment="Center">Back</Label>
+            <Label Grid.Column="0" Grid.Row="4" HorizontalContentAlignment="Center">Decrease</Label>
+            <Label Grid.Column="0" Grid.Row="5" HorizontalContentAlignment="Center">Distance</Label>
+            <Label Grid.Column="0" Grid.Row="6" HorizontalContentAlignment="Center">Route</Label>
+            <Label Grid.Column="0" Grid.Row="7" HorizontalContentAlignment="Center">SRMP</Label>
+            <Label Grid.Column="0" Grid.Row="8" HorizontalContentAlignment="Center">X</Label>
+            <Label Grid.Column="0" Grid.Row="9" HorizontalContentAlignment="Center">Y</Label>
             <Label Grid.Column="1" Grid.Row="1" Content="{Binding SOEResponse.Angle,UpdateSourceTrigger=PropertyChanged}" />
             <Label Grid.Column="1" Grid.Row="2" Content="{Binding SOEResponse.Arm, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Column="1" Grid.Row="3" Content="{Binding SOEResponse.Back, UpdateSourceTrigger=PropertyChanged}"/>
@@ -70,8 +65,8 @@
             <Label Grid.Column="1" Grid.Row="5" Content="{Binding SOEResponse.Distance, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Column="1" Grid.Row="6" Content="{Binding SOEResponse.Route, UpdateSourceTrigger=PropertyChanged}"/>
             <Label Grid.Column="1" Grid.Row="7" Content="{Binding SOEResponse.Srmp, UpdateSourceTrigger=PropertyChanged}"/>
-            <Label Grid.Column="1" Grid.Row="8" Content="{Binding SOEResponse.EventPoint.x, UpdateSourceTrigger=PropertyChanged}"/>
-            <Label Grid.Column="1" Grid.Row="9" Content="{Binding SOEResponse.EventPoint.y, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="1" Grid.Row="8" Content="{Binding SOEResponse.RouteGeometry.x, UpdateSourceTrigger=PropertyChanged}"/>
+            <Label Grid.Column="1" Grid.Row="9" Content="{Binding SOEResponse.RouteGeometry.y, UpdateSourceTrigger=PropertyChanged}"/>
         </Grid>
         <Grid Grid.Column="0" Grid.Row="2">
             <Grid.ColumnDefinitions>
@@ -80,7 +75,8 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Button x:Name="MapPointExecuteButton" Grid.Row="1" Grid.Column="0" Command="{Binding UpdateSOEResponse}">Map It</Button>
-            <Button x:Name="MapPointSaveButton" Grid.Row="1" Grid.Column="1" Command="{Binding UpdateSOEResponse}">Save Result</Button>
+            <Button x:Name="MapPointSaveButton" Grid.Row="1" Grid.Column="1" Command="{Binding SavePointResultCommand}">Save Result</Button>
+            <Label x:Name="resultLabel" Grid.Row="1" Grid.Column="2" Content="{Binding SoePointResponses[0].Angle}"></Label>
         </Grid>
     </Grid>
 </UserControl>

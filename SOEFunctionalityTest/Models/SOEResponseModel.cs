@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -8,8 +10,20 @@ using SOEFunctionalityTest.Utils;
 
 namespace SOEFunctionalityTest.Models
 {
+
     public class SOEResponseModel : ObservableObject
     {
+        private string _id;
+        public string ID
+        {
+            get { return _id; }
+            set
+            {
+                _id = value;
+                OnPropertyChanged("ID");
+            }
+        }
+
         private double _angle = 0;
         public double Angle
         {
@@ -90,13 +104,13 @@ namespace SOEFunctionalityTest.Models
                 OnPropertyChanged("SRMP");
             }
         }
-        private coordinatePair? _eventPoint;
-        public coordinatePair? EventPoint {
-            get { return _eventPoint; }
+        private coordinatePair? _routeGeometry;
+        public coordinatePair? RouteGeometry {
+            get { return _routeGeometry; }
             set
             {
-                _eventPoint = value;
-                OnPropertyChanged("EventPoint");
+                _routeGeometry = value;
+                OnPropertyChanged("RouteGeometry");
             }
         }
         public class coordinatePair

@@ -41,6 +41,9 @@ C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\bin\Debug\net8.0-
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\bin\Debug\net8.0-windows\Flurl.Http.Newtonsoft.dll
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest.csproj.AssemblyReference.cache
+C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\Views\MapLineView.baml
+C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\Views\MapPointView.baml
+C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\Views\ResultsView.baml
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\MainWindow.g.cs
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\Views\MapLineView.g.cs
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\Views\MapPointView.g.cs
@@ -49,10 +52,8 @@ C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest_MarkupCompile.cache
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest_MarkupCompile.lref
+C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\App.baml
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\MainWindow.baml
-C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\Views\MapLineView.baml
-C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\Views\MapPointView.baml
-C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\Views\ResultsView.baml
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest.g.resources
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest.AssemblyInfoInputs.cache
@@ -65,3 +66,4 @@ C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest.pdb
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest.genruntimeconfig.cache
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\ref\SOEFunctionalityTest.dll
+C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll

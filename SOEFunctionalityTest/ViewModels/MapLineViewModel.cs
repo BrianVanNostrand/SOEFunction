@@ -17,12 +17,19 @@ namespace SOEFunctionalityTest.ViewModels
         private SOEArgsModel _soeEndArgs;
         private ICommand _updateSOEStartEndResponse;
         private ICommand _updateSOEStartEndArgs;
+        private List<List<SOEResponseModel>> _soeLineResponses;
         public MapLineViewModel()//constructor
         {
             _soeStartResponse = new SOEResponseModel();
             _soeEndResponse = new SOEResponseModel();
             _soeStartArgs = new SOEArgsModel(1);
             _soeEndArgs = new SOEArgsModel(2);
+            _soeLineResponses = new List<List<SOEResponseModel>>();
+        }
+        public List<List<SOEResponseModel>> SoeLineResponses
+        {
+            get { return _soeLineResponses; }
+            set { _soeLineResponses = value; }
         }
         public SOEResponseModel SOEStartResponse
         {

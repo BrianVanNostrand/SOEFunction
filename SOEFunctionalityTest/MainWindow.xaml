@@ -7,7 +7,7 @@
         xmlns:viewmodels ="clr-namespace:SOEFunctionalityTest.ViewModels"
         xmlns:views ="clr-namespace:SOEFunctionalityTest.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="375">
+        Title="MainWindow" Height="526" Width="375">
     <Window.Resources>
         <views:MapLineView x:Key="MapLineViewKey"/>
         <views:MapPointView x:Key="MapPointViewKey"/>
@@ -43,7 +43,7 @@
                     </Style>
                 </StackPanel.Resources>
                 <Button x:Name="MapPointButton" Click="MapPointButton_Clicked">Map A Point</Button>
-                <Button x:Name="MapLineButton" Click="MapLineButton_Clicked">Map A Line</Button>
+                <Button x:Name="MapLineButton" Click="MapLineButton_Clicked" IsEnabled="false">Map A Line</Button>
                 <Button x:Name="ResultsButton" Click="ResultsButton_Clicked">View Results</Button>
             </StackPanel>
         </DockPanel>

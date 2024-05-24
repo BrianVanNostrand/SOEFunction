@@ -5,15 +5,15 @@ winexe
 C#
 .cs
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\
-SOEFunctionalityTest_nwt1wsjx_wpftmp
+SOEFunctionalityTest
 none
 false
-TRACE;RELEASE;NET;NET8_0;NETCOREAPP
+TRACE;DEBUG;NET;NET8_0;NETCOREAPP
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\App.xaml
 4-597548226
 
-24-1486695426
-404-626529680
+18-516004569
+203-338141512
 MainWindow.xaml;Views\MapLineView.xaml;Views\MapPointView.xaml;Views\ResultsView.xaml;
 
 False

@@ -10,7 +10,8 @@
         "dependencies": {
           "Flurl": "4.0.0",
           "Flurl.Http": "4.0.2",
-          "Flurl.Http.Newtonsoft": "0.9.1"
+          "Flurl.Http.Newtonsoft": "0.9.1",
+          "Microsoft.Xaml.Behaviors.Wpf": "1.1.77"
         },
         "runtime": {
           "SOEFunctionalityTest.dll": {}
@@ -44,6 +45,14 @@
           "lib/net6.0/Flurl.Http.Newtonsoft.dll": {
             "assemblyVersion": "0.9.1.0",
             "fileVersion": "0.9.1.0"
+          }
+        }
+      },
+      "Microsoft.Xaml.Behaviors.Wpf/1.1.77": {
+        "runtime": {
+          "lib/net6.0-windows7.0/Microsoft.Xaml.Behaviors.dll": {
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.77.27830"
           }
         }
       },
@@ -83,6 +92,13 @@
       "sha512": "sha512-e6WsznX9gd5Vik4SOVdO5oSdOW2aoIV7eDIIarCj9YiLg7PGHMnk6uecfd5lFtgBhp0wOeQx2QJfQYb6gKhdMQ==",
       "path": "flurl.http.newtonsoft/0.9.1",
       "hashPath": "flurl.http.newtonsoft.0.9.1.nupkg.sha512"
+    },
+    "Microsoft.Xaml.Behaviors.Wpf/1.1.77": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-MCu674ZETgU18EbxfwIlRpUPJ02YbZenLsMCXTkpeA7KUBpXfFaOUDlEO+7UWu5AFnUoydg+aQENJkuaZPheMQ==",
+      "path": "microsoft.xaml.behaviors.wpf/1.1.77",
+      "hashPath": "microsoft.xaml.behaviors.wpf.1.1.77.nupkg.sha512"
     },
     "Newtonsoft.Json/13.0.1": {
       "type": "package",
