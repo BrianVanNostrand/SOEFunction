@@ -26,6 +26,9 @@
         </DataTemplate>
     </Window.Resources>
     <Grid>
+        <Grid.Resources>
+            <ResourceDictionary Source="Dictionary1.xaml" />
+        </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -35,21 +38,35 @@
             <RowDefinition Height="70px"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="BlanchedAlmond">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
-                <StackPanel.Resources>
-                    <Style TargetType="{x:Type Button}">
-                        <Setter Property="Margin" Value="20,10,20,10"/>
-                    </Style>
-                </StackPanel.Resources>
-                <Button x:Name="MapPointButton" Click="MapPointButton_Clicked">Map A Point</Button>
-                <Button x:Name="MapLineButton" Click="MapLineButton_Clicked" IsEnabled="false">Map A Line</Button>
-                <Button x:Name="ResultsButton" Click="ResultsButton_Clicked">View Results</Button>
-            </StackPanel>
+        <DockPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="white">
+            <Grid x:Name="controlsGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="MapPointButton" FontSize="15" Click="MapPointButton_Clicked" ToolTip="Open the Map A Point tab" Grid.Column="0" Background="#cfd8ff">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="30" Width="30" Source="{StaticResource pointImage}"/>
+                        <Label Content="Map a Point"/>
+                    </StackPanel>
+                </Button>
+                <Button x:Name="MapLineButton" FontSize="15" Click="MapLineButton_Clicked" ToolTip="Open the Map A Line tab" Grid.Column="1" Background="White">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Height="30" Width="30" Source="{StaticResource lineImage}"/>
+                        <Label Content="Map a Line" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Button x:Name="ResultsButton" FontSize="15" Click="ResultsButton_Clicked" ToolTip="Open the Results tab" Grid.Column="2" Background="White">
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="{StaticResource tableImage}" Width="30" Height="30"/>
+                        <Label Content="View Results" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </Grid>
         </DockPanel>
-        <ContentControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Background="AliceBlue" Content="{Binding}" Height="364">
+        <ContentControl Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Background="AliceBlue" Content="{Binding}">
 
         </ContentControl>
-
     </Grid>
 </Window>

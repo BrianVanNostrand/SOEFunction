@@ -5,11 +5,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace SOEFunctionalityTest.ViewModels
 {
-    public class MapLineViewModel
+    public class MapLineViewModel:ViewModelBase
     {
         private SOEResponseModel _soeStartResponse;
         private SOEResponseModel _soeEndResponse;
@@ -17,6 +18,7 @@ namespace SOEFunctionalityTest.ViewModels
         private SOEArgsModel _soeEndArgs;
         private ICommand _updateSOEStartEndResponse;
         private ICommand _updateSOEStartEndArgs;
+        private ICommand _saveLineResultCommand;
         private List<List<SOEResponseModel>> _soeLineResponses;
         public MapLineViewModel()//constructor
         {
@@ -29,12 +31,12 @@ namespace SOEFunctionalityTest.ViewModels
         public List<List<SOEResponseModel>> SoeLineResponses
         {
             get { return _soeLineResponses; }
-            set { _soeLineResponses = value; }
+            set { _soeLineResponses = value; OnPropertyChanged("SoeLineResponses"); }
         }
         public SOEResponseModel SOEStartResponse
         {
             get { return _soeStartResponse; }
-            set { _soeStartResponse = value; }
+            set { _soeStartResponse = value; OnPropertyChanged("SOEStartResponse"); }
         }
         public SOEResponseModel SOEEndResponse
         {
@@ -51,7 +53,7 @@ namespace SOEFunctionalityTest.ViewModels
             get { return _soeEndArgs; }
             set { _soeEndArgs = value; }
         }
-        public ICommand UpdateSOEStartEndResponse
+        public ICommand UpdateSOEStartEndResponseCommand
         {
             get
             {
@@ -65,6 +67,20 @@ namespace SOEFunctionalityTest.ViewModels
                 _updateSOEStartEndResponse = value;
             }
         }
+        public ICommand SaveLineResultCommand
+        {
+            get
+            {
+                if (_saveLineResultCommand == null)
+                    _saveLineResultCommand = new Commands.RelayCommand(SaveLineResult,
+                        null);
+                return _saveLineResultCommand;
+            }
+            set
+            {
+                _saveLineResultCommand = value;
+            }
+        }
         public async void SubmitStartEnd(object param)
         {
             if (param.ToString() == "start")
@@ -72,7 +88,26 @@ namespace SOEFunctionalityTest.ViewModels
                 SOEResponseModel response = await Utils.HTTPRequest.QuerySOE(SOEStartArgs);
                 if (response != null)
                 {
-                    CopyProps.CopyProperties(response, SOEStartResponse);
+                    if (Utils.CheckObject.HasBeenUpdated(SOEEndResponse))
+                    {
+                        if (SOEStartResponse.Route == SOEEndResponse.Route)
+                        {
+                            CopyProps.CopyProperties(response, SOEStartResponse);
+                            //createLine
+                        }
+                        else
+                        {
+                            MessageBox.Show("Start and end points must be on the same route.", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                        } 
+                    }
+                    else
+                    {
+                        CopyProps.CopyProperties(response, SOEStartResponse);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Could not find nearest route.", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
                 }
             }
             else if (param.ToString() == "end")
@@ -80,8 +115,33 @@ namespace SOEFunctionalityTest.ViewModels
                 SOEResponseModel response = await Utils.HTTPRequest.QuerySOE(SOEEndArgs);
                 if (response != null)
                 {
-                    CopyProps.CopyProperties(response, SOEEndResponse);
+                    if (Utils.CheckObject.HasBeenUpdated(SOEStartResponse))
+                    {
+                        if (SOEStartResponse.Route == SOEEndResponse.Route)
+                        {
+                            CopyProps.CopyProperties(response, SOEEndResponse);
+                            //create line
+                        }
+                        else
+                        {
+                            MessageBox.Show("Start and end points must be on the same route.","Error",MessageBoxButton.OK,MessageBoxImage.Exclamation);
+                        }
+                    }
+                    else
+                    {
+                        CopyProps.CopyProperties(response, SOEEndResponse);
+                    }
                 }
+                else
+                {
+                    MessageBox.Show("Could not find nearest route.", "Error", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                } 
+            }
+        }
+        public void SaveLineResult(object state)
+        {
+            if (Utils.CheckObject.HasBeenUpdated(SOEStartResponse)&& Utils.CheckObject.HasBeenUpdated(SOEEndResponse)) {
+                SoeLineResponses.Add([SOEStartResponse, SOEEndResponse]);
             }
         }
     }

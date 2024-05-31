@@ -44,6 +44,10 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "dependencies": {
+            "Esri.ArcGISPro.Extensions": {
+              "target": "Package",
+              "version": "[2.9.0.32739, )"
+            },
             "Flurl": {
               "target": "Package",
               "version": "[4.0.0, )"

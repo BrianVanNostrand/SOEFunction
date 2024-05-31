@@ -27,9 +27,17 @@ namespace SOEFunctionalityTest.Utils
             };
             url.SetQueryParams(queryParams);
             var response = await url.GetAsync();
-            string responseString = await response.ResponseMessage.Content.ReadAsStringAsync();
-            var soeResponses = JsonSerializer.Deserialize<List<SOEResponseModel?>>(responseString);
-            var soeResponse = soeResponses?.First();
+            var soeResponse = new SOEResponseModel();
+            if (response.StatusCode == 200)
+            {
+                string responseString = await response.ResponseMessage.Content.ReadAsStringAsync();
+                var soeResponses = JsonSerializer.Deserialize<List<SOEResponseModel?>>(responseString);
+                soeResponse = soeResponses?.First();
+            }
+            else
+            {
+                //handle error
+            }
             return soeResponse;
         }
     }

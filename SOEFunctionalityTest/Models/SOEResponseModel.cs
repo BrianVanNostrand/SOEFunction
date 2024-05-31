@@ -13,19 +13,9 @@ namespace SOEFunctionalityTest.Models
 
     public class SOEResponseModel : ObservableObject
     {
-        private string _id;
-        public string ID
-        {
-            get { return _id; }
-            set
-            {
-                _id = value;
-                OnPropertyChanged("ID");
-            }
-        }
 
-        private double _angle = 0;
-        public double Angle
+        private double? _angle;
+        public double? Angle
         {
             get { return _angle; }
             set
@@ -35,8 +25,8 @@ namespace SOEFunctionalityTest.Models
             }
         }
 
-        private double _arm = 10;
-        public double Arm
+        private double? _arm;
+        public double? Arm
         {
             get { return _arm; }
             set
@@ -46,8 +36,8 @@ namespace SOEFunctionalityTest.Models
             }
         }
 
-        private bool _back = false;
-        public bool Back
+        private bool? _back;
+        public bool? Back
         {
             get { return _back; }
             set
@@ -57,9 +47,9 @@ namespace SOEFunctionalityTest.Models
             }
         }
 
-        private bool _decrease = false;
+        private bool? _decrease;
 
-        public bool Decrease
+        public bool? Decrease
         {
             get { return _decrease; }
             set
@@ -69,9 +59,9 @@ namespace SOEFunctionalityTest.Models
             }
         }
 
-        private double _distance = 0;
+        private double? _distance;
 
-        public double Distance
+        public double? Distance
         {
             get { return _distance; }
             set
@@ -81,7 +71,7 @@ namespace SOEFunctionalityTest.Models
             }
         }
 
-        private string? _route = "null";
+        private string? _route;
 
         public string? Route
         {
@@ -93,9 +83,9 @@ namespace SOEFunctionalityTest.Models
             }
         }
 
-        private double _srmp = 0;
+        private double? _srmp;
 
-        public double Srmp
+        public double? Srmp
         {
             get { return _srmp; }
             set

@@ -1,14 +1,26 @@
 {
   "version": 2,
-  "dgSpecHash": "5Rjwjkznw5DCOiPIBZqCCGLwnZ6gowXszleE99ksfcwCqUibXf/QxARoC0PrdcWA2l4toob9lSbyhCIz2WAPng==",
+  "dgSpecHash": "s6yAYM4VcifmwSFl2oecS2ZZl1a4v7LdqjREyLo55fallEnEa2JHM0pFOFxYA5G2gQJkXGw+4gQj2d3PyWFEOQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\vannosb\\source\\repos\\SOEFunction\\SOEFunctionalityTest\\SOEFunctionalityTest.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\vannosb\\.nuget\\packages\\esri.arcgispro.extensions\\2.9.0.32739\\esri.arcgispro.extensions.2.9.0.32739.nupkg.sha512",
     "C:\\Users\\vannosb\\.nuget\\packages\\flurl\\4.0.0\\flurl.4.0.0.nupkg.sha512",
     "C:\\Users\\vannosb\\.nuget\\packages\\flurl.http\\4.0.2\\flurl.http.4.0.2.nupkg.sha512",
     "C:\\Users\\vannosb\\.nuget\\packages\\flurl.http.newtonsoft\\0.9.1\\flurl.http.newtonsoft.0.9.1.nupkg.sha512",
     "C:\\Users\\vannosb\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.77\\microsoft.xaml.behaviors.wpf.1.1.77.nupkg.sha512",
     "C:\\Users\\vannosb\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Esri.ArcGISPro.Extensions 2.9.0.32739' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net8.0-windows7.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Esri.ArcGISPro.Extensions",
+      "targetGraphs": [
+        "net8.0-windows7.0"
+      ]
+    }
+  ]
 }

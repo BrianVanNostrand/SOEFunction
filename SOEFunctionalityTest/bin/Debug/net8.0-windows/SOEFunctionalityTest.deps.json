@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "SOEFunctionalityTest/1.0.0": {
         "dependencies": {
+          "Esri.ArcGISPro.Extensions": "2.9.0.32739",
           "Flurl": "4.0.0",
           "Flurl.Http": "4.0.2",
           "Flurl.Http.Newtonsoft": "0.9.1",
@@ -17,6 +18,7 @@
           "SOEFunctionalityTest.dll": {}
         }
       },
+      "Esri.ArcGISPro.Extensions/2.9.0.32739": {},
       "Flurl/4.0.0": {
         "runtime": {
           "lib/netstandard2.0/Flurl.dll": {
@@ -71,6 +73,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Esri.ArcGISPro.Extensions/2.9.0.32739": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EENRlHgiubf1Oq9KQo5ctfn5yVjI3L9mxrfK0CdLNSM/CoBmycsok9j1AJKeL0K/QC52mXeUWNq9LOPEwc7s4A==",
+      "path": "esri.arcgispro.extensions/2.9.0.32739",
+      "hashPath": "esri.arcgispro.extensions.2.9.0.32739.nupkg.sha512"
     },
     "Flurl/4.0.0": {
       "type": "package",

@@ -39,8 +39,10 @@ C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\bin\Debug\net8.0-
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\bin\Debug\net8.0-windows\Flurl.dll
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\bin\Debug\net8.0-windows\Flurl.Http.dll
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\bin\Debug\net8.0-windows\Flurl.Http.Newtonsoft.dll
+C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest.csproj.AssemblyReference.cache
+C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\Dictionary1.baml
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\Views\MapLineView.baml
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\Views\MapPointView.baml
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\Views\ResultsView.baml
@@ -66,4 +68,5 @@ C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest.pdb
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest.genruntimeconfig.cache
 C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\ref\SOEFunctionalityTest.dll
-C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest.Properties.Resources.resources
+C:\Users\vannosb\source\repos\SOEFunction\SOEFunctionalityTest\obj\Debug\net8.0-windows\SOEFunctionalityTest.csproj.GenerateResource.cache

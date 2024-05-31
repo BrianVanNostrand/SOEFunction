@@ -1,2 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
-<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" />
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Condition=" '$(ExcludeRestorePackageImports)' != 'true' ">
+    <Import Project="$(NuGetPackageRoot)esri.arcgispro.extensions\2.9.0.32739\build\net461\Esri.ArcGISPro.Extensions.targets" Condition="Exists('$(NuGetPackageRoot)esri.arcgispro.extensions\2.9.0.32739\build\net461\Esri.ArcGISPro.Extensions.targets')" />
+  </ImportGroup>
+</Project>

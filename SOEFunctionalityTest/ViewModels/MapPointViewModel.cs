@@ -20,7 +20,7 @@ namespace SOEFunctionalityTest.ViewModels
         private ObservableCollection<SOEResponseModel> _soePointResponses;
         private ObservableCollection<string> _testString;
         private ICommand _savePointResultCommand;
-        
+        private bool _isSaved = false;
         public MapPointViewModel()//constructor
         {
             _soeResponse = new SOEResponseModel();
@@ -28,25 +28,29 @@ namespace SOEFunctionalityTest.ViewModels
             _soePointResponses = new ObservableCollection<SOEResponseModel>();
             _testString = new ObservableCollection<string>();
         }
+        public bool IsSaved
+        {
+            get { return _isSaved; }
+            set
+            {
+                _isSaved = value;
+                OnPropertyChanged("IsSaved");
+            }
+        }
         public SOEResponseModel SOEResponse
         {
             get{ return _soeResponse;}
-            set{ _soeResponse = value;}
+            set{ _soeResponse = value; OnPropertyChanged("SOEResponse"); }
         }
         public SOEArgsModel SOEArgs
         {
             get { return _soeArgs;}
-            set { _soeArgs = value;}
+            set { _soeArgs = value; OnPropertyChanged("SOEArgs"); }
         }
         public ObservableCollection<SOEResponseModel> SoePointResponses
         {
             get { return _soePointResponses; }
             set { _soePointResponses = value; OnPropertyChanged("SOEPointResponses"); }
-        }
-        public ObservableCollection<string> TestString
-        {
-            get { return _testString; }
-            set { _testString = value; }
         }
         public List<SOEResponseModel> SelectedItems { get; set; } = new List<SOEResponseModel>();
         public ICommand SelectedItemsCommand
@@ -56,9 +60,7 @@ namespace SOEFunctionalityTest.ViewModels
                 return new Commands.RelayCommand(list =>
                 {
                     SelectedItems.Clear();
-                    System.Collections.IList items = (System.Collections.IList)list;
-                    var collection = items.Cast<SOEResponseModel>();
-                    SelectedItems = collection.ToList();
+                    SelectedItems = Commands.DataGridCommands.UpdateSelection(SelectedItems, list);
                 });
             }
         }
@@ -68,13 +70,24 @@ namespace SOEFunctionalityTest.ViewModels
             {
                 return new Commands.RelayCommand(list =>
                 {
-                    for (int i=SoePointResponses.Count-1; i>=0; i--)
+                    if (SoePointResponses.Count > 0 && SelectedItems.Count > 0)
                     {
-                        if (SelectedItems.Contains(SoePointResponses[i]))
-                        {
-                            SoePointResponses.Remove(SoePointResponses[i]);
+                        if (MessageBox.Show(
+                            $"Are you sure you wish to delete these {SelectedItems.Count} records?",
+                            "Delete Rows",
+                            MessageBoxButton.YesNo,
+                            MessageBoxImage.Question) == MessageBoxResult.Yes
+                        ){
+                            for (int i=SoePointResponses.Count-1; i>=0; i--)
+                            {
+                                if (SelectedItems.Contains(SoePointResponses[i]))
+                                {
+                                    SoePointResponses.Remove(SoePointResponses[i]);
+                                }
+                            }
                         }
                     }
+                    
                 });
             }
         }
@@ -84,7 +97,17 @@ namespace SOEFunctionalityTest.ViewModels
             {
                 return new Commands.RelayCommand(list =>
                 {
-                    SoePointResponses.Clear();
+                    if (SoePointResponses.Count > 0)
+                    {
+                        if (MessageBox.Show(
+                            $"Are you sure you wish to clear all {SoePointResponses.Count} point records?", 
+                            "Clear Results",
+                            MessageBoxButton.YesNo,
+                            MessageBoxImage.Question) == MessageBoxResult.Yes
+                        ){
+                            SoePointResponses.Clear();
+                        }
+                    }
                 });
             }
         }
@@ -122,15 +145,41 @@ namespace SOEFunctionalityTest.ViewModels
             if(response != null)
             {
                 CopyProps.CopyProperties(response, SOEResponse);
+                if (SoePointResponses.Contains(SOEResponse))
+                {
+                    IsSaved = true;
+                }
+                else
+                {
+                    IsSaved = false;
+                }
             }
         }
         public void SavePointResult(object state)
         {
-            //string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-            //Random random = new Random();
-            //string randomString = new string(Enumerable.Repeat(chars, 4).Select(s => s[random.Next(s.Length)]).ToArray());
-            //TestString.Add(randomString);
-            SoePointResponses.Add(SOEResponse);
+            if (Utils.CheckObject.HasBeenUpdated(SOEResponse))
+            {
+                if (SoePointResponses.Contains(SOEResponse))
+                {
+                    if(MessageBox.Show(
+                        $"The selected point already exists in the results tab. Save a duplicate?",
+                        "Clear Results",
+                        MessageBoxButton.YesNo,
+                        MessageBoxImage.Question) == MessageBoxResult.Yes
+                    ){
+                        SoePointResponses.Add(SOEResponse);
+                    }
+                }
+                else
+                {
+                    SoePointResponses.Add(SOEResponse);
+                    IsSaved = true;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Create a point to save it to the results tab.", "Save error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

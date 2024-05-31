@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SOEFunctionalityTest")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6b698670d2c6e8331f9572a220ca4d6917f64aba")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("SOEFunctionalityTest")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SOEFunctionalityTest")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
